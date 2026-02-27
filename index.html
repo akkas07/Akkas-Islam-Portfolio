@@ -3,50 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MD Akkas Islam | Full-Stack Web Developer</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- SEO Meta Tags -->
+  <title>MD Akkas Islam | Full-Stack Web Developer & Freelancer</title>
+  <meta name="description" content="MD Akkas Islam - Professional Full-Stack Web Developer specializing in React, Next.js, Tailwind CSS, Node.js & MongoDB. Building modern, fast & responsive websites.">
+  <meta name="keywords" content="MD Akkas Islam, full stack developer, react developer, next.js developer, freelance web developer, bangladesh web developer">
+  <meta name="author" content="MD Akkas Islam">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MD Akkas Islam | Full-Stack Web Developer">
+  <meta property="og:description" content="Creating modern, responsive and high-performance websites for businesses and startups.">
+  <!-- Change to your real profile photo later -->
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=MD+Akkas+Islam+Portfolio">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MD Akkas Islam | Full-Stack Web Developer">
+  <meta name="twitter:description" content="React, Next.js, Tailwind CSS Expert">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630?text=MD+Akkas+Islam+Portfolio">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <style>
     :root {
-      --primary: #6366f1;
-      --dark: #1e293b;
-      --light: #f8fafc;
+      --primary: #ff2e63;
+      --purple: #a855f7;
+      --gradient: linear-gradient(135deg, #ff2e63 0%, #d946ef 60%, #a855f7 100%);
+      --dark: #0d1117;
+      --light: #f8f9fa;
+      --card-light: rgba(255,255,255,0.92);
+      --card-dark: rgba(30,41,59,0.92);
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      color: var(--dark);
       background: var(--light);
+      color: var(--dark);
       line-height: 1.7;
-      margin: 0;
+      overflow-x: hidden;
     }
 
     .navbar {
-      background: rgba(255,255,255,0.95) !important;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(226,232,240,0.4);
+      background: rgba(13,17,23,0.96) !important;
+      backdrop-filter: blur(12px);
+      padding: 1.2rem 0;
     }
 
     .navbar-brand {
       font-weight: 800;
-      color: var(--primary) !important;
-      font-size: 1.8rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: clamp(1.6rem, 5vw, 2.1rem);
     }
 
     .nav-link {
+      color: white !important;
       font-weight: 500;
-      color: var(--dark) !important;
+      font-size: clamp(1rem, 3vw, 1.15rem);
     }
 
     .nav-link:hover {
@@ -55,76 +77,314 @@
 
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--gradient);
+      position: relative;
       color: white;
       display: flex;
       align-items: center;
       text-align: center;
-      padding: 0 15px;
+      padding: 2rem 1rem;
+    }
+
+    #particles-js {
+      position: absolute;
+      inset: 0;
     }
 
     .hero h1 {
-      font-size: 4rem;
-      font-weight: 800;
+      font-size: clamp(3rem, 10vw, 6.8rem);
+      font-weight: 900;
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 1.5rem;
     }
 
-    .hero p.lead {
-      font-size: 1.4rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+    .hero p {
+      font-size: clamp(1.2rem, 4.5vw, 1.9rem);
+      max-width: 900px;
+      margin: 0 auto 3rem;
     }
 
-    .section {
-      padding: 100px 0;
-    }
-
-    .section-title {
-      text-align: center;
+    .btn-hero {
+      background: white;
+      color: var(--primary);
+      padding: 1rem 3rem;
+      border-radius: 50px;
       font-weight: 700;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .card {
-      border: none;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      font-size: 1.4rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
       transition: all 0.4s;
     }
 
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    .btn-hero:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 60px rgba(255,46,99,0.5);
+    }
+
+    .section {
+      padding: clamp(80px, 12vw, 140px) 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 7vw, 4.2rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .skill-card {
+      background: linear-gradient(145deg, #667eea22, #764ba222);
+      border-radius: 24px;
+      padding: 2.8rem 2rem;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(102,126,234,0.25);
+      height: 100%;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-16px) scale(1.03);
+      box-shadow: 0 35px 80px rgba(102,126,234,0.35);
+    }
+
+    .skill-icon {
+      font-size: 5.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      text-align: center;
+    }
+
+    .skill-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .skill-features {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .skill-features li {
+      font-size: 1.12rem;
+      margin-bottom: 1rem;
+      padding-left: 2.2rem;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .skill-features li::before {
+      content: "➤";
+      color: var(--primary);
+      font-size: 1.6rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-weight: bold;
+    }
+
+    .project-card, .blog-card {
+      background: var(--card-dark);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      color: white;
+      text-align: center;
+    }
+
+    .project-card:hover, .blog-card:hover {
+      transform: translateY(-18px);
+      box-shadow: 0 35px 90px rgba(255,46,99,0.45);
+    }
+
+    .project-img, .blog-img {
+      height: clamp(200px, 40vw, 280px);
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-img,
+    .blog-card:hover .blog-img {
+      transform: scale(1.08);
+    }
+
+    .project-body, .blog-body {
+      padding: 2rem;
+    }
+
+    .project-title, .blog-title-card {
+      font-size: clamp(1.5rem, 4vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .project-desc, .blog-excerpt {
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      opacity: 0.9;
+      margin-bottom: 1.8rem;
+    }
+
+    .learn-more, .read-more {
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: all 0.4s;
+    }
+
+    .learn-more:hover, .read-more:hover {
+      background: var(--purple);
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .blog-title {
+      font-size: clamp(2.5rem, 7vw, 3.5rem);
+      font-weight: 800;
+    }
+
+    .see-more-btn {
+      background: var(--purple);
+      color: white;
+      padding: 0.9rem 2.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: all 0.4s;
+    }
+
+    .see-more-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .modal-content {
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #cbd5e1;
+      padding: 6rem 1rem 4rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .footer-col h5 {
+      color: white;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .social-icons a {
+      color: #cbd5e1;
+      font-size: 2.1rem;
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 35px;
+      width: 70px;
+      height: 70px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      z-index: 1000;
+      transition: all 0.4s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15) translateY(-5px);
     }
 
     #back-to-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      bottom: 35px;
+      right: 120px;
+      width: 60px;
+      height: 60px;
       background: var(--primary);
       color: white;
       border: none;
-      font-size: 1.3rem;
-      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      box-shadow: 0 12px 35px rgba(255,46,99,0.4);
       opacity: 0;
       visibility: hidden;
       transition: all 0.4s;
-      z-index: 1000;
+      z-index: 999;
     }
 
     #back-to-top.show {
@@ -132,11 +392,16 @@
       visibility: visible;
     }
 
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 60px 0 30px;
-      text-align: center;
+    @media (max-width: 992px) {
+      .footer-row { justify-content: center; }
+      .footer-col { margin-bottom: 3rem; }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 { font-size: 3.4rem; }
+      .section-title { font-size: 2.6rem; }
+      .whatsapp-float { bottom: 150px; right: 25px; width: 60px; height: 60px; font-size: 2rem; }
+      #back-to-top { right: 25px; bottom: 110px; width: 55px; height: 55px; font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -152,8 +417,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -162,59 +429,364 @@
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <div class="container">
-      <h1 data-aos="fade-up">Hello, I'm MD Akkas Islam</h1>
-      <p class="lead" data-aos="fade-up" data-aos-delay="200">Full-Stack Web Developer | Creating modern & responsive websites</p>
-      <a href="#projects" class="btn btn-light btn-lg px-5" data-aos="zoom-in" data-aos-delay="400">View Projects</a>
+    <div id="particles-js"></div>
+    <div class="container position-relative" data-aos="fade-up" data-aos-duration="1400">
+      <h1>Hi! I'm <span id="typed"></span></h1>
+      <p class="lead">I build modern, fast, responsive & SEO-friendly websites for businesses and startups</p>
+      <a href="#projects" class="btn btn-hero">Explore My Work <i class="fas fa-arrow-right ms-2"></i></a>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="section bg-light">
+  <section id="about" class="section bg-white">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">About Me</h2>
-      <div class="row align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <img src="https://via.placeholder.com/500x600?text=Your+Photo" alt="Profile" class="img-fluid rounded shadow">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="150">
+          <!-- === Change this to your real profile photo === -->
+          <img src="./IMAGE/1769286601716.png" alt="MD Akkas Islam - Full Stack Developer" class="img-fluid rounded-4 shadow-lg">
         </div>
-        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-          <p class="lead">Passionate developer with experience in HTML, CSS, JavaScript, React, Node.js and more.</p>
-          <p>I build clean, fast and user-friendly web applications.</p>
+        <div class="col-lg-7" data-aos="fade-left" data-aos-delay="250">
+          <p class="lead fs-4 fw-bold text-center">Hi! I'm MD Akkas Islam</p>
+          <p class="fs-5 text-center">Passionate Full-Stack Web Developer specializing in React, Next.js, Tailwind CSS, Node.js & MongoDB. Turning ideas into clean, fast & user-friendly digital experiences.</p>
+          <div class="mt-5 d-flex flex-wrap gap-3 justify-content-center">
+            <!-- === Change to your real CV link === -->
+            <a href="#" class="btn btn-primary btn-lg px-5" target="_blank">Download CV <i class="fas fa-download ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg px-5">Let's Talk <i class="fas fa-paper-plane ms-2"></i></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
+  <!-- Skills -->
+  <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card">
-            <img src="https://via.placeholder.com/400x250?text=Project+1" class="card-img-top" alt="Project">
-            <div class="card-body">
-              <h5>Project One</h5>
-              <p class="card-text">Description here...</p>
+      <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+      <div class="row g-4 g-lg-5 justify-content-center">
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <div class="skill-name">HTML5</div>
+            <ul class="skill-features mt-4">
+              <li>Semantic & accessible markup</li>
+              <li>SEO-friendly structure</li>
+              <li>Form validation & best practices</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-name">CSS3</div>
+            <ul class="skill-features mt-4">
+              <li>Flexbox & CSS Grid expert</li>
+              <li>Animations & transitions</li>
+              <li>Responsive design (mobile-first)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-js"></i></div>
+            <div class="skill-name">JavaScript</div>
+            <ul class="skill-features mt-4">
+              <li>ES6+ modern syntax</li>
+              <li>DOM manipulation & events</li>
+              <li>Async/Await & Promises</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="250">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-react"></i></div>
+            <div class="skill-name">React</div>
+            <ul class="skill-features mt-4">
+              <li>Functional components & Hooks</li>
+              <li>Context API & State management</li>
+              <li>React Router & navigation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-name">MongoDB</div>
+            <ul class="skill-features mt-4">
+              <li>NoSQL database design</li>
+              <li>CRUD operations</li>
+              <li>Aggregation pipelines</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="350">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-fire"></i></div>
+            <div class="skill-name">Firebase</div>
+            <ul class="skill-features mt-4">
+              <li>Authentication system</li>
+              <li>Realtime Database</li>
+              <li>Cloud Hosting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-tailwind"></i></div>
+            <div class="skill-name">Tailwind CSS</div>
+            <ul class="skill-features mt-4">
+              <li>Utility-first framework</li>
+              <li>Rapid UI development</li>
+              <li>Custom configuration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="450">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="skill-name">Git & GitHub</div>
+            <ul class="skill-features mt-4">
+              <li>Version control</li>
+              <li>Branching strategy</li>
+              <li>Pull requests & collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects - 10 Projects -->
+  <section id="projects" class="section" style="background:var(--card-dark); color:white;">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">My Projects </h2>
+      <div class="row g-5 justify-content-center">
+        <!-- Project 1 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <!-- Change this image to your real project #1 screenshot -->
+            <img src="./IMAGE/dr-protfolio.png" class="project-img" alt="Project 1">
+            <div class="project-body">
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-desc">Clean, modern & responsive personal portfolio using HTML + CSS.</p>
+              <!-- Change this to your real GitHub / live link -->
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card">
-            <img src="https://via.placeholder.com/400x250?text=Project+2" class="card-img-top" alt="Project">
-            <div class="card-body">
-              <h5>Project Two</h5>
-              <p class="card-text">Description here...</p>
+
+        <!-- Project 2 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-card">
+            <img src="./IMAGE/e-comarce.png" class="project-img" alt="Project 2">
+            <div class="project-body">
+              <h3 class="project-title">E-commerce Dashboard</h3>
+              <p class="project-desc">Admin panel with charts & analytics using React + Chart.js.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card">
-            <img src="https://via.placeholder.com/400x250?text=Project+3" class="card-img-top" alt="Project">
-            <div class="card-body">
-              <h5>Project Three</h5>
-              <p class="card-text">Description here...</p>
+
+        <!-- Project 3 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card">
+            <img src="./IMAGE/cafe.png" class="project-img" alt="Project 3">
+            <div class="project-body">
+              <h3 class="project-title">Scribbles Cafe</h3>
+              <p class="project-desc">Blog platform with bookmark & reading time features.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-card">
+            <img src="./IMAGE/carrer.png" class="project-img" alt="Project 4">
+            <div class="project-body">
+              <h3 class="project-title">Career Hub</h3>
+              <p class="project-desc">Job portal with filtering & React Router.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card">
+            <img src="./IMAGE/business.png" class="project-img" alt="Project 5">
+            <div class="project-body">
+              <h3 class="project-title">Cars</h3>
+              <p class="project-desc">New by And Cars Rent Service .</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
+          <div class="project-card">
+            <img src="./IMAGE/i nphone.png" class="project-img" alt="Project 6">
+            <div class="project-body">
+              <h3 class="project-title">Phone Hunter</h3>
+              <p class="project-desc">Mobile phone search app with API integration.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-card">
+            <img src="./IMAGE/tea house.png" class="project-img" alt="Project 7">
+            <div class="project-body">
+              <h3 class="project-title">Tea House</h3>
+              <p class="project-desc">Responsive e-commerce product page with Tailwind.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="450">
+          <div class="project-card">
+            <img src="./IMAGE/building.png" class="project-img" alt="Project 8">
+            <div class="project-body">
+              <h3 class="project-title">Geometry Genius</h3>
+              <p class="project-desc">Interactive geometric shape area calculator.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-card">
+            <img src="./IMAGE/bike.png" class="project-img" alt="Project 9">
+            <div class="project-body">
+              <h3 class="project-title">Bike Dekho</h3>
+              <p class="project-desc">Bike catalog & purchase UI with Tailwind CSS.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="550">
+          <div class="project-card">
+            <img src="./IMAGE/Architect.png" class="project-img" alt="Project 10">
+            <div class="project-body">
+              <h3 class="project-title">G3 Architect</h3>
+              <p class="project-desc">Responsive architect portfolio using pure CSS.</p>
+              <a href="#" target="_blank" class="learn-more">View Project <i class="fas fa-external-link-alt ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog - 8 Blogs -->
+  <section id="blog" class="blog-section">
+    <div class="container">
+      <div class="blog-header">
+        <h2 class="blog-title">Most Popular Blog 🔥</h2>
+        <a href="#" class="see-more-btn">See More Blog <i class="fas fa-arrow-right ms-2"></i></a>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal1">
+            <!-- Change this to your real blog image #1 -->
+            <img src="./New folder/quit.jpg" class="blog-img" alt="Blog 1">
+            <div class="blog-category">Coding Culture</div>
+            <h3 class="blog-title-card">Why Beginners Quit Coding?</h3>
+            <p class="blog-excerpt">Common reasons beginners give up and how to stay motivated...</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal2">
+            <!-- Change this to your real blog image #2 -->
+            <img src="./New folder/time.jpg" class="blog-img" alt="Blog 2">
+            <div class="blog-category">Coding Culture</div>
+            <h3 class="blog-title-card">Is Contest a Waste of Time?</h3>
+            <p class="blog-excerpt">Should you participate in programming contests like Codeforces?</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal3">
+            <!-- Change this to your real blog image #3 -->
+            <img src="./New folder/softower.jpg" class="blog-img" alt="Blog 3">
+            <div class="blog-category">Software Development</div>
+            <h3 class="blog-title-card">Web Development vs Software Engineering</h3>
+            <p class="blog-excerpt">What is the real difference between these two roles?</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal4">
+            <!-- Change this to your real blog image #4 -->
+            <img src="./New folder/motivated.jpg" class="blog-img" alt="Blog 4">
+            <div class="blog-category">Coding Culture</div>
+            <h3 class="blog-title-card">How to Stay Motivated</h3>
+            <p class="blog-excerpt">Tips to keep going when coding feels hard...</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal5">
+            <!-- Change this to your real blog image #5 -->
+            <img src="./New folder/web-dev.jpg" class="blog-img" alt="Blog 5">
+            <div class="blog-category">Web Development</div>
+            <h3 class="blog-title-card">New Features in Next.js 14</h3>
+            <p class="blog-excerpt">Server Components, Turbopack and more...</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal6">
+            <!-- Change this to your real blog image #6 -->
+            <img src="./New folder/freelanching.jpg" class="blog-img" alt="Blog 6">
+            <div class="blog-category">Career</div>
+            <h3 class="blog-title-card">Start Freelancing Guide</h3>
+            <p class="blog-excerpt">How to get your first client on Upwork & Fiverr...</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal7">
+            <!-- Change this to your real blog image #7 -->
+            <img src="./New folder/vs.jpg" class="blog-img" alt="Blog 7">
+            <div class="blog-category">Tools</div>
+            <h3 class="blog-title-card">Tailwind vs Bootstrap 2026</h3>
+            <p class="blog-excerpt">Which one should you choose for modern projects?</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+          <div class="blog-card" data-bs-toggle="modal" data-bs-target="#blogModal8">
+            <!-- Change this to your real blog image #8 -->
+            <img src="./New folder/new.jpg" class="blog-img" alt="Blog 8">
+            <div class="blog-category">Learning</div>
+            <h3 class="blog-title-card">What to Learn in 2026?</h3>
+            <p class="blog-excerpt">AI, Web3, Rust, Go, TypeScript — trending technologies...</p>
+            <div class="read-more">Read More <i class="fas fa-arrow-right ms-2"></i></div>
           </div>
         </div>
       </div>
@@ -222,17 +794,25 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section bg-light">
+  <section id="contact" class="section bg-white">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
       <div class="row justify-content-center">
-        <div class="col-md-8" data-aos="zoom-in">
-          <form class="p-4 bg-white rounded shadow">
-            <div class="mb-3"><input type="text" class="form-control" placeholder="Name" required></div>
-            <div class="mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
-            <div class="mb-4"><textarea class="form-control" rows="5" placeholder="Message" required></textarea></div>
-            <button type="submit" class="btn btn-primary w-100">Send</button>
-          </form>
+        <div class="col-md-8 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-5 shadow-lg border-0">
+            <form>
+              <div class="mb-4">
+                <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+              </div>
+              <div class="mb-4">
+                <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+              </div>
+              <div class="mb-5">
+                <textarea class="form-control form-control-lg" rows="5" placeholder="Your Message or Project Details" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-hero w-100">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -240,36 +820,94 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 MD Akkas Islam. All rights reserved.</p>
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h5 class="mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a href="#about" class="text-reset text-decoration-none">About Me</a></li>
+            <li class="mb-3"><a href="#projects" class="text-reset text-decoration-none">Projects</a></li>
+            <li class="mb-3"><a href="#blog" class="text-reset text-decoration-none">Blog</a></li>
+            <li class="mb-3"><a href="#" class="text-reset text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-reset text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="mb-4">Connect With Me</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-4 fs-3">
+            <!-- Change these to your real social links -->
+            <a href="https://facebook.com" target="_blank" class="text-reset"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="text-reset"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" class="text-reset"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-reset"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 pt-5 border-top border-secondary">
+        <p class="mb-0">© 2026 MD Akkas Islam. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Back to Top Button -->
+  <!-- WhatsApp Floating -->
+  <a href="https://wa.me/8801xxxxxxxxx?text=Hi! I want to talk about website development" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top -->
   <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
-  <!-- Scripts at the end -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800,
+      duration: 1200,
       once: true,
-      easing: 'ease-out'
+      easing: 'ease-out-back',
+      offset: 100
     });
 
-    // Back to top
+    new Typed('#typed', {
+      strings: ['MD Akkas Islam', 'Full-Stack Developer', 'React & Next.js Expert', 'Freelance Web Developer'],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true
+    });
+
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 100 },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.6, random: true },
+        size: { value: 4, random: true },
+        line_linked: {
+          enable: true,
+          distance: 180,
+          color: '#ffffff',
+          opacity: 0.7,
+          width: 2.5
+        },
+        move: { enable: true, speed: 4, direction: 'none', random: true }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' }
+        },
+        modes: {
+          grab: { distance: 220, line_linked: { opacity: 0.9 } },
+          push: { particles_nb: 6 }
+        }
+      },
+      retina_detect: true
+    });
+
     const btn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btn.classList.toggle('show', window.scrollY > 300);
-    });
-    btn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-      });
-    });
-  </script> 
+    window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 450));
+    btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  </script>
 </body>
 </html>
